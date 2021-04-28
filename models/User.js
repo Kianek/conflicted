@@ -19,7 +19,7 @@ const UserSchema = new Schema(
       minLength: 8,
     },
     roles: [{ type: String, default: 'user' }],
-    office: {
+    organization: {
       type: String,
       required: true,
     },
