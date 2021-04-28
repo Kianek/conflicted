@@ -1,1 +1,1 @@
-[![Build Status](https://www.travis-ci.com/Kianek/conflicted.svg?branch=main)](https://www.travis-ci.com/Kianek/conflicted)
+[![Build Status](https://www.travis-ci.com/Kianek/conflicted.svg?branch=master)](https://www.travis-ci.com/Kianek/conflicted)
