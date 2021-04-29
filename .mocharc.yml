@@ -1,0 +1,5 @@
+color: true
+package: './package.json'
+recursive: true
+spec:
+  - 'tests/**/*.spec.js'
