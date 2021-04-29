@@ -1,11 +1,17 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const AddressSchema = require('./Address');
-const CaseSchema = require('./Case');
+const AddressSchema = require('./AddressSchema');
+const CaseSchema = require('./CaseSchema');
 const isEmail = require('validator/lib/isEmail');
 
 const ClientSchema = new Schema(
   {
+    organization: {
+      type: String,
+      required: true,
+      trim: true,
+      minLength: 1,
+    },
     firstName: {
       type: String,
       required: true,
@@ -20,6 +26,7 @@ const ClientSchema = new Schema(
       type: String,
       required: true,
       trim: true,
+      minLength: 1,
     },
     age: {
       type: Number,
@@ -44,6 +51,4 @@ const ClientSchema = new Schema(
   { timestamps: true }
 );
 
-const Client = mongoose.model('Client', ClientSchema);
-
-module.exports = Client;
+module.exports = ClientSchema;

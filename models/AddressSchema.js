@@ -6,6 +6,7 @@ const AddressSchema = new Schema({
     type: String,
     trim: true,
     required: true,
+    minLength: 1,
   },
   line2: {
     type: String,
@@ -14,10 +15,14 @@ const AddressSchema = new Schema({
   city: {
     type: String,
     trim: true,
+    required: true,
+    minLength: 1,
   },
   stateOrProvince: {
     type: String,
     trim: true,
+    required: true,
+    minLength: 1,
   },
   postalCode: {
     type: String,
@@ -26,4 +31,4 @@ const AddressSchema = new Schema({
   },
 });
 
-module.exports = Address;
+module.exports = AddressSchema;

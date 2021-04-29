@@ -22,6 +22,8 @@ const UserSchema = new Schema(
     organization: {
       type: String,
       required: true,
+      trim: true,
+      minLength: 1,
     },
     accountActive: {
       type: Boolean,
@@ -31,6 +33,4 @@ const UserSchema = new Schema(
   { timestamps: true }
 );
 
-const User = mongoose.model('User', UserSchema);
-
-module.exports = User;
+module.exports = UserSchema;
