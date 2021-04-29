@@ -1,5 +1,9 @@
 color: true
 package: './package.json'
 recursive: true
+require:
+  - 'core-js'
+  - 'regenerator-runtime'
+  - '@babel/register'
 spec:
-  - 'tests/**/*.spec.js'
+  - 'lib/tests/**/*.spec.js'
