@@ -5,7 +5,7 @@ const UserSchema = require('../../models/UserSchema');
 const User = compileModel('User', UserSchema);
 
 describe('UserFactory', () => {
-  it('createUser - instantiates a User model', () => {
+  it('#createUser instantiates a User model', () => {
     const factory = new UserFactory();
     expect(factory.createUser()).to.be.a(typeof User);
   });
