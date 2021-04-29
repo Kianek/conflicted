@@ -6,4 +6,4 @@ require:
   - 'regenerator-runtime'
   - '@babel/register'
 spec:
-  - 'lib/tests/**/*.spec.js'
+  - 'lib/test/**/*.spec.js'
