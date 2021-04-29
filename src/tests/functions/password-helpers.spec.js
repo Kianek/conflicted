@@ -1,20 +1,20 @@
-const expect = require('chai').expect;
-const pw = require('../../functions/password-helpers');
-const EmptyPasswordException = require('../../exceptions/EmptyPasswordException');
+import { expect } from 'chai';
+import { hashPassword, passwordsMatch } from '../../functions/password-helpers';
+import EmptyPasswordException from '../../exceptions/EmptyPasswordException';
 
 describe('password-helpers', () => {
   let password = 'supersecret123!';
 
   describe('hashPassword', () => {
     it('returns a hashed password', async () => {
-      let hashedPassword = await pw.hashPassword(password);
+      let hashedPassword = await hashPassword(password);
       expect(hashedPassword.length).to.be.greaterThan(1);
     });
 
     it('throws EmptyPasswordException', async () => {
       let exception;
       try {
-        await pw.hashPassword('');
+        await hashPassword('');
       } catch (ex) {
         exception = ex.name;
       }
@@ -27,17 +27,17 @@ describe('password-helpers', () => {
     let passwordHash = '';
 
     before(async () => {
-      passwordHash = await pw.hashPassword(password);
+      passwordHash = await hashPassword(password);
     });
 
     it('passwords match; returns true', async () => {
-      let result = await pw.passwordsMatch(password, passwordHash);
+      let result = await passwordsMatch(password, passwordHash);
       expect(result).to.be.true;
     });
 
     it('passwords do not match; returns false', async () => {
       const wrongPassword = 'totallydifferentpassword321!';
-      const result = await pw.passwordsMatch(password, wrongPassword);
+      const result = await passwordsMatch(password, wrongPassword);
       expect(result).to.be.false;
     });
   });
