@@ -2,7 +2,7 @@ import bcrypt from 'bcrypt';
 import isEmpty from 'validator/lib/isEmpty';
 import EmptyPasswordException from '../exceptions/EmptyPasswordException';
 
-const hashPassword = async (password) => {
+export const hashPassword = async (password) => {
   if (isEmpty(password)) {
     throw new EmptyPasswordException();
   }
@@ -13,11 +13,6 @@ const hashPassword = async (password) => {
   return await bcrypt.hash(password, salt);
 };
 
-const passwordsMatch = async (password, passwordHash) => {
+export const passwordsMatch = async (password, passwordHash) => {
   return await bcrypt.compare(password, passwordHash);
-};
-
-export default {
-  hashPassword,
-  passwordsMatch,
 };
