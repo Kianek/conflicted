@@ -3,7 +3,7 @@ const ClientSchema = require('../models/ClientSchema');
 
 class ClientFactory {
   createClient() {
-    return null;
+    return compileModel('Client', ClientSchema);
   }
 }
 
